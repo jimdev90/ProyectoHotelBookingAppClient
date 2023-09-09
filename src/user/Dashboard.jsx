@@ -1,16 +1,25 @@
 import DashboardNav from "../components/DashboardNav.jsx";
+import ConnectNav from "../components/ConnectNav.jsx";
+import { Link } from 'react-router-dom';
 const Dashboard = () => {
 
     return (
         <>
             <div className="container-fluid bg-secondary p-5">
-                <h1>Dashboard</h1>
+                <ConnectNav />
             </div>
             <div className="container-fluid p-4">
                 <DashboardNav />
             </div>
-            <div className="container">
-                <p>Mostrar todas las reservas y un botón para buscar hoteles</p>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-md-10">
+                        <h2>Your Bookings</h2>
+                    </div>
+                    <div className="col-md-2">
+                        <Link to="/" className="btn btn-primary">+ Registrar Nuevo</Link>
+                    </div>
+                </div>
             </div>
         </>
     )

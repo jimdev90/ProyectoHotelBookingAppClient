@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Dashboard from "../user/Dashboard.jsx";
 
 
 const TopNav = () => {
@@ -17,17 +18,26 @@ const TopNav = () => {
         navigate("/login")
 
     }
-
-    console.log(typeof auth)
-    console.log({auth});
-
     return (
         <div className="nav bg-light d-flex justify-content-between">
             <Link className="nav-link" to="/">Home</Link>
+
             {
-                auth !== null ? (
+                auth !== null && (
+                    <Link className="nav-link" to="/dashboard">
+                        Dashboard
+                    </Link>
+                )
+            }
+
+            {
+                auth !== null && (
                     <a className="nav-link pointer" onClick={logout}>Cerrar Sesión</a>
-                ) : (
+                )
+            }
+
+            {
+                auth === null && (
                     <>
                         <Link className="nav-link" to="/login">
                             Login

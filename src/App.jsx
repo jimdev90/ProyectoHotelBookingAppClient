@@ -10,6 +10,7 @@ import Login from "./auth/Login.jsx";
 import Register from "./auth/Register.jsx";
 import Dashboard from "./user/Dashboard.jsx";
 import DashboardSeller from "./user/DashboardSeller.jsx";
+import NewHotel from "./hotels/NewHotel.jsx";
 
 
 function App() {
@@ -35,6 +36,14 @@ function App() {
                     element={
                         <PrivateRoute>
                             <DashboardSeller />
+                        </PrivateRoute>
+                    }/>
+
+                <Route
+                    exact path="/hotels/new"
+                    element={
+                        <PrivateRoute>
+                            <NewHotel />
                         </PrivateRoute>
                     }/>
 
